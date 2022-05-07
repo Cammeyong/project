@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <%- include('nav.ejs') %>
+
+    <form action="projects/add" method="post">
+        <h1>Create New Project</h1>
+
+        <label for="">Title of Project:<span> *</span>
+            <input type="text" name="title" id="title">
+        </label>
+
+        <label for="">Project Description:<span> *</span>
+            <textarea name="description" id="" cols="30" rows="5"></textarea>
+        </label>
+
+        <label for="">Date Project Started
+            <input type="date" name="start_date" id="start_date">
+        </label>
+
+        <label for="">Project Due Date
+            <input type="date" name="due_date" id="due_date">
+        </label>
+
+        <button type="submit">Submit Project</button>
+
+    </form>
+</body>
+</html>

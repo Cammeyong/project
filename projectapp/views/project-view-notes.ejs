@@ -7,11 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="../public/styles.css" type="text/css">
 </head>
-<body>
+<body style="background-image: url(https://miro.medium.com/max/1000/1*ZyPefUo8k7rIw2o0QMnaIA.png); background-position: center;
+background-repeat: no-repeat; background-size: cover; width: 100vw; height: 100vh;">
     
     <%- include('nav.ejs') %>
 
-    <h1>Projects Listings</h1>
+    <h1>Project Journal Entries</h1>
 
     <table class="listing">
         <thead>
@@ -27,7 +28,7 @@
         <tbody>
             <% if(notes.length) { for(var i = 0; i< notes.length; i++) {%>
                 <tr>
-                    <td><%= notes[i].project_id %></td>
+                    <td style="text-align: center;"><%= notes[i].project_id %></td>
                     <td><%= notes[i].project_journal %></td>
                     <td><%= new Date(notes[i].active_date).toLocaleDateString('fr-CA') %></td>
                     <td>

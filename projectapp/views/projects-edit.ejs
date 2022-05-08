@@ -24,9 +24,13 @@
         list-style: none;
     }
     li {
-        padding: 10px;
+            padding: 10px;
         background-color: skyblue;
         border-radius: 20px;
+        width: 20%;
+        text-align: center;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
     }
 
     li a {
@@ -42,7 +46,7 @@
         padding: 3% 0 5% 5%;
         height: auto;
         box-shadow: 1px 4px 3px 1px rgb(148, 217, 245) ;
-        background: rgba(255,2255,255,0.9);
+        background: rgba(255,2255,255);
     }
     form .notesUpdate {
         margin: 5% 0;
@@ -125,10 +129,10 @@
         </ul>
     </nav>
 
-    <h1 style="text-align: center; margin-top: 3%; text-shadow: 1px 2px 4px rgb(64, 105, 112); font-size: 3em;
-    color: skyblue; letter-spacing: .1em;">Edit Project Information</h1>
+    
 
     <form action="/projects-update/:id/update" method="post">
+        <h1 style="margin: 1% 0 3% 0; text-shadow: 1px 2px 4px rgb(64, 105, 112); font-size: 2.5em; color: skyblue; letter-spacing: .1em; width: 100%;">Edit Project Information</h1>
 
         <div class="viewNotes">
             <a href="/projectnotes"><button type="button">Create Project Notes</button></a>

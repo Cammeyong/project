@@ -61,11 +61,13 @@ li a {
 }
 h1 {
     text-align: center;
-    margin-top: 3%;
+    margin: 3% 0 0 10%;
     text-shadow: 1px 2px 4px rgb(64, 105, 112);
     font-size: 3em;
     color: skyblue;
     letter-spacing: .1em;
+    background-color: rgb(255, 255, 255, 0.95);
+    width: 80%;
 }
 .projects .project-info, .project-date {
     display: flex;
@@ -108,6 +110,7 @@ span {
     border: 1px solid rgb(30, 208, 214);
     height: auto;
     border-collapse: collapse;
+    background-color: white;
 }
 .listing th {
     text-align: left;
@@ -144,12 +147,13 @@ td a:hover {
 }
 .newNotes {
     width: 50%;
-    height: 60%;
+    height: 65%;
     margin: 3% 0 0 23%;
     border: 1px solid skyblue;
     padding: 3% 0 5% 5%;
     box-shadow: 1px 4px 3px 1px rgb(148, 217, 245) ;
     border-top: 5px solid skyblue;
+    background-color: rgb(255, 255, 255, 0.95);
 }
 .viewNotes {
     right: 0;

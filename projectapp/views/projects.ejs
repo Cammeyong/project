@@ -6,6 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../public/styles.css">
+    <style>
+        .row {
+            display: flex;
+            width: 80%;
+            margin: 5% 0 0 10%;
+        }
+        .col {
+            flex: 50%;
+        }
+        .col1 {
+            background-image: url(https://i1.wp.com/getflowdotcom.wpcomstaging.com/wp-content/uploads/2020/06/project-management-tools-benefits.jpg?fit=1448%2C724&ssl=1);
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            width: 100vw; 
+            height: 400px;
+        }
+        .form {
+            /* width: 30%; */
+            border: 1px solid skyblue;
+            border-top: 5px solid skyblue;
+            padding: 3% 0 5% 5%;
+            height: auto;
+        }
+
+        .form .project-info, .project-date {
+            display: flex;
+            margin: 2% 0;
+            width: 80%;
+            justify-content: space-between;
+        }
+        .form .project-info, .project-date label {
+            font-size: 1.3em;
+            
+        }
+        .form button {
+            padding: 10px;
+            background-color: skyblue;
+            color: white;
+            width: 25%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+       
+
+
+    </style>
 </head>
 <body>
 
@@ -13,38 +62,46 @@
 
     <h1>Create New Project</h1>
 
-    <form action="projects/add" method="post" class="projects">
-        
+    <div class="row">
 
-        <div class="project-info">
-            <label for="">Title of Project:<span> *</span>
-                <br>
-                <input type="text" name="title" id="title">
-            </label>        
+        <div class=" col col1">
 
-            <label for="">Project Description:<span> *</span>
-                <br>
-                <textarea name="description" id="" cols="30" rows="5"></textarea>
-            </label>
         </div>
 
-        <br>
+        <form action="projects/add" method="post" class="form">
 
-        <div class="project-date">
+            <div class="project-info">
+                <label for="">Title of Project:<span> *</span>
+                    <br>
+                    <input type="text" name="title" id="title">
+                </label>        
+    
+                <label for="">Project Description:<span> *</span>
+                    <br>
+                    <textarea name="description" id="" cols="30" rows="5"></textarea>
+                </label>
+            </div>
+    
+            <br>
+    
+            <div class="project-date">
+    
+                <label for="">Date Project Started:<span> *</span>
+                    <input type="date" name="start_date" id="start_date">
+                </label>
+    
+                <label for="">Project Due Date:<span> *</span>
+                    <input type="date" name="due_date" id="due_date">
+                </label>
+            </div>
+    
+            <br>
+    
+            <button type="submit">Submit Project</button>
+    
+        </form>
+    </div>
 
-            <label for="">Date Project Started:<span> *</span>
-                <input type="date" name="start_date" id="start_date">
-            </label>
-
-            <label for="">Project Due Date:<span> *</span>
-                <input type="date" name="due_date" id="due_date">
-            </label>
-        </div>
-
-        <br>
-
-        <button type="submit">Submit Project</button>
-
-    </form>
+    
 </body>
 </html>

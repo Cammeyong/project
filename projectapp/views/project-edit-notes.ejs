@@ -7,6 +7,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="../public/styles.css" type="text/css">
     <style>
+
+        .row {
+            display: flex;
+            width: 80%;
+            margin-left: 10%;
+        }
+        .col {
+            flex: 50%;
+        }
+        .col1 {
+            background-image: url(https://i.pinimg.com/736x/84/fc/72/84fc72e52401849d8c7a53768d73c2f0.jpg);
+            background-position: center;
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            width: 100vw; 
+            height: 400px;
+        }
         nav {
             width: 100%;
         }
@@ -20,6 +37,10 @@
             padding: 10px;
             background-color: skyblue;
             border-radius: 20px;
+            width: 20%;
+            text-align: center;
+            border-top: 2px solid white;
+            border-bottom: 2px solid white;
         }
 
         li a {
@@ -27,11 +48,10 @@
             color: white;
         }
         form {
-            width: 30%;
-            margin: 2% 0 0 30%;
+            /* width: 30%; */
             border: 1px solid skyblue;
             border-top: 5px solid skyblue;
-            padding: 0 5%;
+            padding-left: 5%;
             height: auto;
         }
         form .notesUpdate {
@@ -80,31 +100,38 @@
     <h1 style="text-align: center; margin-top: 3%; text-shadow: 1px 2px 4px rgb(64, 105, 112); font-size: 3em;
     color: skyblue; letter-spacing: .1em;">Edit Project Information</h1>
 
-    <form action="/project-edit-notes/:id/update" method="post">
+    <div class="row">
+        <div class="col col1"></div>
+
+        <form class="col" action="/project-edit-notes/:id/update" method="post">
         
-        <div class="notesUpdate">
-            <input type="hidden" name="id" value="<%= edit_notes[0].id %>"/>
+            <div class="notesUpdate">
+                <input type="hidden" name="id" value="<%= edit_notes[0].id %>"/>
+    
+    
+                <label for="" style="margin-bottom: 5%;">Edit Journal Notes<span> *</span>
+    
+                    <br>
+    
+                    <input type="text" name="project_journal" value="<%= edit_notes[0].project_journal %>" placeholder="<%= edit_notes[0].project_journal %>" />
+                </label>
+    
+    
+                <label for="">Change Date<span> *</span>
+    
+                    <br>
+    
+                    <input type="date" name="active_date" value="<%= new Date(edit_notes[0].due_date).toLocaleDateString('fr-CA') %>" placeholder="<%= new Date(edit_notes[0].due_date).toLocaleDateString('fr-CA') %>" />
+                </label>
+            </div>
+    
+            <button type="submit">Submit Changes</button>
+    
+        </form>
 
+    </div>
 
-            <label for="" style="margin-bottom: 5%;">Edit Journal Notes<span> *</span>
-
-                <br>
-
-                <input type="text" name="project_journal" value="<%= edit_notes[0].project_journal %>" placeholder="<%= edit_notes[0].project_journal %>" />
-            </label>
-
-
-            <label for="">Change Date<span> *</span>
-
-                <br>
-
-                <input type="date" name="active_date" value="<%= new Date(edit_notes[0].due_date).toLocaleDateString('fr-CA') %>" placeholder="<%= new Date(edit_notes[0].due_date).toLocaleDateString('fr-CA') %>" />
-            </label>
-        </div>
-
-        <button type="submit">Submit Changes</button>
-
-    </form>
+   
 
 </body>
 </html>

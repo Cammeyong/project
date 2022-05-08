@@ -5,36 +5,165 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= page_title %></title>
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    nav {
+        width: 100%;
+        padding-top: 2%;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 15%;
+        list-style: none;
+    }
+    li {
+        padding: 10px;
+        background-color: skyblue;
+        border-radius: 20px;
+    }
+
+    li a {
+        text-decoration: none;
+        color: white;
+    }
+    form {
+        width: 50%;
+        height: 60%;
+        margin: 3% 0 0 25%;
+        border: 1px solid skyblue;
+        border-top: 5px solid skyblue;
+        padding: 3% 0 5% 5%;
+        height: auto;
+        box-shadow: 1px 4px 3px 1px rgb(148, 217, 245) ;
+        background: rgba(255,2255,255,0.9);
+    }
+    form .notesUpdate {
+        margin: 5% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 1.5em;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid rgb(138, 136, 136);
+        margin-top: 2%;
+        width: 50%;
+        text-transform:capitalize;
+    }
+    .submitUpdate {
+        right: 0;
+        text-align: right;
+        margin-right: 10%;
+        margin-top: 5%;
+
+    }
+    .submitUpdate button {
+        padding: 10px;
+        box-shadow: 1px 3px 2px rgb(71, 131, 155);
+        border: none;
+        background-color: skyblue;
+        color: white;
+        border-radius: 20px;
+        font-size: 1.07em;
+        cursor: pointer;
+    }
+    span {
+        color: red;
+    }
+    .viewNotes a button {
+        padding: 10px;
+        box-shadow: 1px 3px 2px rgb(71, 131, 155);
+        border: none;
+        background-color: skyblue;
+        color: white;
+        border-radius: 20px;
+        font-size: 1.07em;
+        cursor: pointer;
+        margin-bottom: 5%;
+    }
+    .project-info, .project-date {
+        display: flex;
+        margin: 4% 0;
+        width: 90%;
+        justify-content: space-between;
+    }
+    .project-info, .project-date label {
+        font-size: 1.3em;
+        
+    }
+    
+    body {
+        background-image: url('https://www.salesforce.com/content/dam/blogs/ca/Blog%20Posts/project-managemnet-open-graph.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        /* overflow: hidden; */
+        /* z-index: 1; */
+        border:5px solid rgb(30, 208, 214)
+    }
+</style>
 <body>
 
-    <%- include('nav.ejs') %>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/userprojects">Create New Project</a></li>
+            <li><a href="/projects-page">All Projects</a></li>
+            
+        </ul>
+    </nav>
 
-    
-    <form action="/projects-update/update/" method="post">
-        <h1>Edit Project Information</h1>
+    <h1 style="text-align: center; margin-top: 3%; text-shadow: 1px 2px 4px rgb(64, 105, 112); font-size: 3em;
+    color: skyblue; letter-spacing: .1em;">Edit Project Information</h1>
 
+    <form action="/projects-update/:id/update" method="post">
 
+        <div class="viewNotes">
+            <a href="/projectnotes"><button type="button">Create Project Notes</button></a>
+        </div>
+        
 
         <input type="hidden" name="id" value="<%= project[0].id %>"/>
 
 
-        <label for="">Change Project Title
-            <input type="text" name="title" value="<%= project[0].title %>" placeholder="<%= project[0].title %>" />
-        </label>
+        <div class="project-info">
+            <label for="">Change Project Title
+                <input type="text" name="title" value="<%= project[0].title %>" placeholder="<%= project[0].title %>" />
+            </label>
 
-        <label for="">Change Project Description
-            <textarea name="description" id="" cols="30" rows="5" value="<%= project[0].description %>" placeholder="<%= project[0].description %>"></textarea>
-        </label>
+            <label for="">Change Project Description
+                <textarea style="margin-top: 2%;" name="description" id="" cols="30" rows="5" value="<%= project[0].description %>" placeholder="<%= project[0].description %>"></textarea>
+            </label>
+        </div>
 
-        <label for="">Change Project Start Date
-            <input type="date" name="start_date" value="<%= project[0].start_date %>" placeholder="<%= project[0].start_date %>" />
-        </label>
-        <label for="">Change Project Due Date
-            <input type="date" name="due_date" value="<%= project[0].due_date %>" placeholder="<%= project[0].due_date %>" />
-        </label>
+        <div class="project-date">
+            <label for="">Change Start Date
+                <input type="date" name="start_date" value="<%= new Date(project[0].start_date).toLocaleDateString('fr-CA') %>" placeholder="<%= new Date(project[0].start_date).toLocaleDateString('fr-CA') %>" />
+            </label>
+            <label for="">Change Due Date
+                <input type="date" name="due_date" value="<%= new Date(project[0].due_date).toLocaleDateString('fr-CA') %>" placeholder="<%= new Date(project[0].due_date).toLocaleDateString('fr-CA') %>" />
+            </label>
+        </div>
 
-        <button type="submit">Submit Changes</button>
+        <div class="submitUpdate">
+            <button type="submit">Submit Changes</button>
+        </div>
+
+        
     </form>
+
+
 </body>
 </html>

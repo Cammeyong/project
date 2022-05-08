@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+    
+    <%- include('nav.ejs') %>
+
+    
+    <h1>Create New Project Journal Entry</h1>
+
+    <form action="project-notes/add" method="post" class="newNotes">
+
+        <div class="viewNotes">
+            <a href="/project-view-notes"><button type="button">View Notes</button></a>
+        </div>
+
+        <div class="newEntry">
+            <label for="">Projects ID# <span>*</span>
+                <br>
+                <input type="number" name="project_id" id="project_id">
+            </label>
+
+            <br>
+
+            <label for="">Notes:<span> *</span>
+                <br>
+                <textarea name="project_journal" id="" cols="30" rows="5"></textarea>
+            </label>
+
+            <br>
+
+            <label for="">Active Date <span>*</span>
+                <br>
+                <input type="date" name="active_date" id="active_date">
+            </label>
+        </div>
+
+
+        <button type="submit" class="submitNotes">Submit Notes</button>
+
+        
+
+
+    </form>
+
+</body>
+</html>

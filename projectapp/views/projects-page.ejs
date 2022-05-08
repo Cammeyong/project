@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= page_title %></title>
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
 
@@ -12,7 +13,7 @@
 
     <h1>Projects Listings</h1>
 
-    <table>
+    <table class="listing">
         <thead>
             <tr>
                 <th>ID Number</th>
@@ -20,7 +21,7 @@
                 <th>Description</th>
                 <th>Start Date</th>
                 <th>Due Date</th>
-                <th>Revise Info</th>
+                <th>Revise Project Info</th>
             </tr>
         </thead>
 
@@ -28,14 +29,14 @@
         <tbody>
             <% if(projects.length) { for(var i = 0; i< projects.length; i++) {%>
                 <tr>
-                    <td><%= projects[i].id %></td>
+                    <td style="text-align: center;"><%= projects[i].id %></td>
                     <td><%= projects[i].title %></td>
                     <td><%= projects[i].description %></td>
-                    <td><%= new Date(projects[i].start_date).toLocaleDateString() %></td>
-                    <td><%= new Date(projects[i].due_date).toLocaleDateString() %></td>
+                    <td><%= new Date(projects[i].start_date).toLocaleDateString('fr-CA') %></td>
+                    <td><%= new Date(projects[i].due_date).toLocaleDateString('fr-CA') %></td>
                     <td>
-                        <a href="/projects-edit/edit/<%=projects[i].id%>">Edit</a>
-                        <a href="/projects-delete/delete/<%=projects[i].id%>">Delete</a>
+                        <a href="/projects-edit/edit/<%=projects[i].id%>" class="edit">Edit</a>
+                        <a href="/projects-delete/delete/<%=projects[i].id%>" class="delete">Delete</a>
                     </td>
                 </tr>
             <% }

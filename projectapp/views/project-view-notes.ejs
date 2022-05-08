@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/styles.css" type="text/css">
+</head>
+<body>
+    
+    <%- include('nav.ejs') %>
+
+    <h1>Projects Listings</h1>
+
+    <table class="listing">
+        <thead>
+            <tr>
+                <th>Projects Id</th>
+                <th>Project Journal</th>
+                <th>Active Date</th>
+                <th>Edit Notes</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <% if(notes.length) { for(var i = 0; i< notes.length; i++) {%>
+                <tr>
+                    <td><%= notes[i].project_id %></td>
+                    <td><%= notes[i].project_journal %></td>
+                    <td><%= new Date(notes[i].active_date).toLocaleDateString('fr-CA') %></td>
+                    <td>
+                        <a href="/project-edit-notes/edit/<%=notes[i].id%>" class="edit">Edit</a>
+                        <a href="/project-delete-notes/delete/<%=notes[i].id%>" class="delete">Delete</a>
+                    </td>
+                </tr>
+            <% }
+                
+            }else{ %>
+                <tr>
+                    <td colspan="3">No Notes Added</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+</body>
+</html>

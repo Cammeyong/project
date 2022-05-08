@@ -5,29 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
 
     <%- include('nav.ejs') %>
 
-    <form action="projects/add" method="post">
-        <h1>Create New Project</h1>
+    <h1>Create New Project</h1>
 
-        <label for="">Title of Project:<span> *</span>
-            <input type="text" name="title" id="title">
-        </label>
+    <form action="projects/add" method="post" class="projects">
+        
 
-        <label for="">Project Description:<span> *</span>
-            <textarea name="description" id="" cols="30" rows="5"></textarea>
-        </label>
+        <div class="project-info">
+            <label for="">Title of Project:<span> *</span>
+                <br>
+                <input type="text" name="title" id="title">
+            </label>        
 
-        <label for="">Date Project Started
-            <input type="date" name="start_date" id="start_date">
-        </label>
+            <label for="">Project Description:<span> *</span>
+                <br>
+                <textarea name="description" id="" cols="30" rows="5"></textarea>
+            </label>
+        </div>
 
-        <label for="">Project Due Date
-            <input type="date" name="due_date" id="due_date">
-        </label>
+        <br>
+
+        <div class="project-date">
+
+            <label for="">Date Project Started:<span> *</span>
+                <input type="date" name="start_date" id="start_date">
+            </label>
+
+            <label for="">Project Due Date:<span> *</span>
+                <input type="date" name="due_date" id="due_date">
+            </label>
+        </div>
+
+        <br>
 
         <button type="submit">Submit Project</button>
 

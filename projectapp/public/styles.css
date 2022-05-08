@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    width: 100%;
+    padding-top: 2%;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15%;
+    list-style: none;
+}
+li {
+    padding: 10px;
+    background-color: skyblue;
+    border-radius: 20px;
+    width: 20%;
+    text-align: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+.bgImage {
+    background-image: url(https://d2poqm5pskresc.cloudfront.net/wp-content/uploads/2022/02/enterprise-data-management-services-featured.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    border:10px solid rgb(30, 208, 214)
+   
+}
+.bgImage h1 {
+   margin-top: 30%;
+   background-color: rgb(153, 214, 238, 0.4);
+   color: white;
+   font-size: 4em;
+   width: 80%;
+   border: 10px solid rgba(113, 198, 231, 0.6);
+   margin-left: 10%;
+   padding: 10px;
+}
+.projects {
+    width: 60%;
+    height: 60%;
+    margin: 3% 0 0 18%;
+    border: 1px solid skyblue;
+    padding: 3% 0 5% 5%;
+    box-shadow: 1px 4px 3px 1px rgb(148, 217, 245) ;
+
+}
+h1 {
+    text-align: center;
+    margin-top: 3%;
+    text-shadow: 1px 2px 4px rgb(64, 105, 112);
+    font-size: 3em;
+    color: skyblue;
+    letter-spacing: .1em;
+}
+.projects .project-info, .project-date {
+    display: flex;
+    margin: 2% 0;
+    width: 70%;
+    justify-content: space-between;
+}
+.projects .project-info, .project-date label {
+    font-size: 1.3em;
+    
+}
+.projects button {
+    padding: 10px;
+    background-color: skyblue;
+    color: white;
+    width: 25%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(138, 136, 136);
+    margin-top: 2%;
+}
+textarea {
+    border-radius: 5px;
+    border: 1px solid rgb(143, 141, 141);
+    margin-top: 2%;
+}
+
+span {
+    color: red;
+}
+
+.listing {
+    margin:2% 0 auto 15%;
+    width: 70%;
+    border: 1px solid rgb(30, 208, 214);
+    height: auto;
+    border-collapse: collapse;
+}
+.listing th {
+    text-align: left;
+    font-size: 1.2em;
+    padding: 10px;
+    text-decoration: underline;
+    background-color: skyblue;
+    color: white;
+    word-wrap: break-word;
+}
+.listing td {
+    padding: 10px;
+    text-align: left;
+    /* border: 1px solid red; */
+    font-size: 1em;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+.edit, .delete {
+    margin:0 7%;
+    padding: 8px;
+    font-size: 1.05em;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+}
+td a:hover {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    
+}
+.newNotes {
+    width: 50%;
+    height: 60%;
+    margin: 3% 0 0 23%;
+    border: 1px solid skyblue;
+    padding: 3% 0 5% 5%;
+    box-shadow: 1px 4px 3px 1px rgb(148, 217, 245) ;
+    border-top: 5px solid skyblue;
+}
+.viewNotes {
+    right: 0;
+    text-align: right;
+    margin-right: 5%;
+
+}
+.viewNotes a button {
+    padding: 10px;
+    box-shadow: 1px 3px 2px rgb(71, 131, 155);
+    border: none;
+    background-color: skyblue;
+    color: white;
+    border-radius: 20px;
+    font-size: 1.07em;
+    cursor: pointer;
+}
+
+.newNotes .newEntry {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+.submitNotes {
+    padding: 8px;
+    box-shadow: 1px 3px 2px rgb(71, 131, 155);
+    border: none;
+    background-color: skyblue;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.07em;
+    cursor: pointer;
+}
